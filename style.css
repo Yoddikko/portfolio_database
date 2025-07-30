@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: monospace;
+    background: black;
+    color: #33ff33;
+  }
+  
+  .terminal {
+    height: 100vh;            /* fallback */
+    height: 100dvh;           /* si adatta anche con la tastiera mobile */
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  /* area di output del terminale */
+  #output {
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-family: monospace;
+    white-space: pre-wrap;     /* consente l'andare a capo automatico */
+    word-break: break-word;    /* evita la scroll orizzontale */
+    line-height: 1.2;
+  }
+  
+  .input-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* spazio tra prompt e input */
+    position: sticky; /* resta visibile quando appare la tastiera */
+    bottom: 0;
+    background: black;
+  }
+  
+  .input-line .prompt {
+    white-space: nowrap; /* evita che vada a capo */
+  }
+  
+  #input {
+    flex-grow: 1; /* occupa il resto dello spazio disponibile */
+    background: black;
+    color: #33ff33;
+    border: none;
+    outline: none;
+    font-family: monospace;
+    font-size: 1rem;
+  }
+    
+  .prompt {
+    color: #33ff33;
+  }
+  
+  pre {
+    font-family: monospace;
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 0;
+    line-height: 1.1;
+  }
+  
+  a[data-cmd] {
+    color: #2e8cbf;           
+    text-decoration: underline;  
+    cursor: pointer;
+  }
+  
+  a[data-cmd]:hover {
+    color: #2e8cbf;         
+  }
+  
+  a:link { 
+    text-decoration: none; 
+  } 
+  a:visited { 
+    text-decoration: none; 
+  } 
+  a:hover { 
+    text-decoration: none; 
+  } 
+  a:active { 
+    text-decoration: none; 
+  }
+
+  a.gh-link {
+    color: #2e8cbf;        /* Ciano acceso */
+    text-decoration: none; /* Nessuna sottolineatura */
+  }
+  
+  a.gh-link:hover {
+    color: #2e8cbf;        /* Colore leggermente più chiaro al passaggio */
+  }
+
+  /* ------ Mobile adjustments ------ */
+  @media (max-width: 600px) {
+    body {
+      font-size: 0.9rem;
+    }
+    #input {
+      font-size: 0.9rem;
+    }
+    pre {
+      font-size: 0.7rem;
+    }
+  }
